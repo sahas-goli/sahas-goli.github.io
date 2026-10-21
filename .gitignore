@@ -5,5 +5,4 @@
 *.fdb_latexmk
 *.synctex.gz
 preview-*.png
-.claude/
-private/
+.tmp.driveupload/

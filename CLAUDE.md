@@ -7,13 +7,14 @@ Rules for working on `Sahas_Goli_Resume.tex` (and the rendered PDF).
 - `Sahas_Goli_Resume.tex` is the authoritative resume. Edit the `.tex`, rebuild, and commit both `.tex` and `.pdf`.
 - There is no `.md` counterpart anymore — do not recreate one.
 - The repo is served as GitHub Pages from `sahas266.github.io`. `index.html` embeds the PDF and should not be modified casually.
-- `private/archive.md` is a gitignored overflow store: bullets cut from the resume, roles that never fit, and details lost in condensing. When trimming content, move it there instead of deleting it. It holds only what is *not* on the resume — never duplicate live bullets into it.
+- Variants: an independent resume (own `.tex` + `.pdf`; formatting and content may differ freely) lives in its own subdirectory with an `index.html` embedding its PDF, reachable only by direct URL. The site root always stays the main resume. Never link a variant from the root `index.html` or anywhere public. Give the variant's `index.html` `<meta name="robots" content="noindex">`, and never add a `robots.txt` naming variant paths (that advertises them). Unlisted is not hidden: the repo is public, so a variant is visible in its file list. Private-content, content-accuracy, and git rules apply to variants; formatting and layout rules below bind only the main resume.
+- The archive, `../../archive/archive.md` (its own private repo, outside this one), is a master copy of everything across every resume, one section per entity (school, role, activity, award group): lines on a resume now (verbatim, LaTeX escapes stripped), cut bullets, alternate wordings, details. `[unconfirmed]` marks open questions; everything else is untagged. Nothing in it marks what is live; the `.tex` is the only record of that. When trimming content, never delete its archive line. After any `.tex` edit, add any new wording to the archive.
 
 ## Private content
 
-This repo is public and served over HTTP. `private/` is gitignored and must stay that way.
+This repo is public and served over HTTP. The archive lives outside it and must stay out.
 
-- Never `git add` anything under `private/`, never quote its contents into a commit message, the `.tex`, or `index.html`.
+- Never copy the archive into this repo, never quote its contents into a commit message, the `.tex`, or `index.html`.
 - Anything committed here is public permanently, even if later deleted.
 
 ## Build and verify workflow
